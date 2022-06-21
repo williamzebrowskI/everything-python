@@ -5,3 +5,4 @@ as the size of the set of input grows over time. And the reason the letter O is
 used is because the growth rate of an algorithm's time complexity is also referred to 
 as the order of operation. 
 
+This is just a test.  There is no need to panic.  We are here and we are safe.
