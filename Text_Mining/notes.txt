@@ -1,0 +1,7 @@
+Big-O notation used to describe algorithm performance.
+
+This notation format is used to describe how a particular algorithm performs 
+as the size of the set of input grows over time. And the reason the letter O is 
+used is because the growth rate of an algorithm's time complexity is also referred to 
+as the order of operation. 
+
