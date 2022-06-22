@@ -38,9 +38,7 @@ j = {v for v in f.values() if v >= 1}
 k = {i * v for i in f.values() for v in f1.values()}
 l = {k: v for k, v in f.items() for k, v in f1.items() if k > 'd'}
 
-
-
-print(l)
+#print(l)
 
 
 
