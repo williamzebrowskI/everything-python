@@ -3,7 +3,7 @@ import sys
 import random
 import requests
 if __name__ == '__main__':
-    url = "https://hooks.slack.com/services/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"
+    url = "enter slack webhook here"
     message = ("Test Message")
     title = (f"Incoming Test Results :zap:")
     slack_data = {
