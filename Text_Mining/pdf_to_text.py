@@ -1,13 +1,21 @@
+from PyPDF2 import PdfReader
+import re
 import PyPDF2
+import pytest
 
-pdfFileObj = open('benephilly.pdf', 'rb')  # creating a pdf file object
+reader = PdfReader('benephilly.pdf', 'rb') # Create a PDF reader Object
+number_of_pages = len(reader.pages) #number of pages
+page = reader.pages[0]   # creating a page object 
+text = page.extract_text()  # extracting text from page 
 
-pdfReader = PyPDF2.PdfFileReader(pdfFileObj) # Create a PDF reader Object
+#print(text)
+def test_create_txt():
+    texts = "We are here to help! Call llkj BenePhilly at 1-800-236-2 194 if you have any questions." 
+    convert_file = open('pdfconvert.txt', 'wt')  #creates file
+    print(text, file=convert_file) # prints text from pdf to new file
 
-print(pdfReader.numPages) # Number of Pages
+    convert_file = open('pdfconvert.txt', 'r')
+    assert texts in convert_file.read()
+    convert_file.close()
 
-pageObj = pdfReader.getPage(0)  # creating a page object 
-
-print(pageObj.extractText()) # extracting text from page 
-
-pdfFileObj.close()
+test_create_txt()
