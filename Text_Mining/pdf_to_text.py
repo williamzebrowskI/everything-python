@@ -2,6 +2,7 @@ from PyPDF2 import PdfReader
 import re
 import PyPDF2
 import pytest
+import nltk
 
 reader = PdfReader('benephilly.pdf', 'rb') # Create a PDF reader Object
 number_of_pages = len(reader.pages) #number of pages
@@ -15,7 +16,12 @@ def test_create_txt():
     print(text, file=convert_file) # prints text from pdf to new file
 
     convert_file = open('pdfconvert.txt', 'r')
-    assert texts in convert_file.read()
+    #assert texts in convert_file.read()
     convert_file.close()
+
+
+def test_mod_text():
+    mod = open('pdfconvert.txt', 'r')
+    print(mod[0:10])
 
 test_create_txt()
